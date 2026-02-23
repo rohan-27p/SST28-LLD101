@@ -15,5 +15,13 @@ public class Main {
         );
 
         sys.checkout("student", order);
+        System.out.println();
+
+        List<OrderLine> staffOrder =
+            List.of(
+                new OrderLine("M1",2),
+                new OrderLine("S1",1)
+            );
+        sys.checkout("staff",staffOrder);
     }
 }
