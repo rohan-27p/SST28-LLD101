@@ -1,0 +1,20 @@
+PS C:\Rohan27\SST28-LLD101\SOLID\Ex2\src> javac *.java
+PS C:\Rohan27\SST28-LLD101\SOLID\Ex2\src> java Main.java
+=== Cafeteria Billing ===
+Invoice# INV-1001
+- Veg Thali x2 = 160.00
+- Coffee x1 = 30.00
+Subtotal: 190.00
+Tax(5%): 9.50
+Discount: -10.00
+TOTAL: 189.50
+Saved invoice: INV-1001 (lines=7)
+
+Invoice# INV-1002
+- Veg Thali x2 = 160.00
+- Sandwich x1 = 60.00
+Subtotal: 220.00
+Tax(2%): 4.40
+Discount: -5.00
+TOTAL: 219.40
+Saved invoice: INV-1002 (lines=7)
