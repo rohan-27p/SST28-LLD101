@@ -1,0 +1,6 @@
+PS C:\Rohan27\SST28-LLD101\SOLID\Ex3\src> java Main.java
+=== Placement Eligibility ===
+Student: Ayaan (CGR=8.10, attendance=72, credits=18, flag=NONE)
+RESULT: NOT_ELIGIBLE
+- attendance below 75
+Saved evaluation for roll=23BCS1001
