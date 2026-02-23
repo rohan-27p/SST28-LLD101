@@ -1,0 +1,6 @@
+=== Hostel Fee Calculator ===
+Room: DOUBLE | AddOns: [LAUNDRY, MESS]
+Monthly: 22000.00
+Deposit: 5000.00
+TOTAL DUE NOW: 27000.00
+Saved booking: H-7781
