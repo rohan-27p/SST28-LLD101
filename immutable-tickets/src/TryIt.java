@@ -1,7 +1,7 @@
 import com.example.tickets.IncidentTicket;
 import com.example.tickets.TicketService;
 
-import java.util.List;
+// import java.util.List;
 
 /**
  * Starter demo that shows why mutability is risky.
@@ -12,23 +12,22 @@ import java.util.List;
  * - service "updates" should return a NEW ticket instance
  */
 public class TryIt {
-
     public static void main(String[] args) {
+
         TicketService service = new TicketService();
 
-        IncidentTicket t = service.createTicket("TCK-1001", "reporter@example.com", "Payment failing on checkout");
-        System.out.println("Created: " + t);
+        IncidentTicket ticket = service.createTicket("INC-001","rohan@foo.com","Payment gateway not working");
 
-        // Demonstrate post-creation mutation through service
-        service.assign(t, "agent@example.com");
-        service.escalateToCritical(t);
-        System.out.println("\nAfter service mutations: " + t);
+        System.out.println("Original: " + ticket.getTitle());
+        IncidentTicket updated = service.assignTicket(ticket, "agent@example.com");
 
-        // Demonstrate external mutation via leaked list reference
-        List<String> tags = t.getTags();
-        tags.add("HACKED_FROM_OUTSIDE");
-        System.out.println("\nAfter external tag mutation: " + t);
+        System.out.println("Assignee: " + updated.getAssigneeEmail());
+        try {
+            ticket.getTags().add("bug");
+        } catch (UnsupportedOperationException e) {
+            System.out.println("Tags list is immutable!");
+        }
 
-        // Starter compiles; after refactor, you should redesign updates to create new objects instead.
+        System.out.println("Original assignee: " + ticket.getAssigneeEmail());
     }
 }
