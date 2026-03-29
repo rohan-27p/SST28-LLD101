@@ -1,11 +1,12 @@
-public class TreasurerTool implements ClubAdminTools {
-    private final BudgetLedger ledger;
-    public TreasurerTool(BudgetLedger ledger) { this.ledger = ledger; }
+class TreasurerTool implements FinanceOps {
+    private int ledgerBalance = 0;
 
-    @Override public void addIncome(double amt, String note) { ledger.add(amt, note); }
-    @Override public void addExpense(double amt, String note) { ledger.add(-amt, note); }
+    public void addLedgerEntry(int amount, String source) {
+        ledgerBalance += amount;
+        System.out.println("Ledger: +" + amount + " (" + source + ")");
+    }
 
-    @Override public void addMinutes(String text) { /* irrelevant */ }
-    @Override public void createEvent(String name, double budget) { /* irrelevant */ }
-    @Override public int getEventsCount() { return 0; } // dummy
+    public int getBalance() {
+        return ledgerBalance;
+    }
 }
